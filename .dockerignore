@@ -2,7 +2,8 @@
 .yarn/cache
 .yarn/install-state.gz
 node_modules
-packages/*/src
+packages/backend/src
+!packages/app/src
 packages/*/node_modules
 plugins
 *.local.yaml
