@@ -1,5 +1,4 @@
-[providers]
-node = "18"
+providers = ["node"]
 
 [phases.setup]
 nixPkgs = ["nodejs_18", "yarn", "python3", "make", "gcc", "libc", "libc.dev"]
