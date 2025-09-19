@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "yarn start",
+    "startCommand": "yarn build:all && yarn workspace backend start --config app-config.yaml --config app-config.production.yaml",
     "healthcheckPath": "/",
     "healthcheckTimeout": 300
   }

@@ -1,0 +1,27 @@
+# Variáveis de ambiente para Railway
+# Extraídas da string: postgres://railway:U__tP4eae9!rhciksAEzZr5ky8bUQWyj@postgres.railway.internal:5432/railway
+
+# URLs da aplicação (substitua pelo domínio real do Railway)
+APP_BASE_URL=https://seu-app.railway.app
+BACKEND_BASE_URL=https://seu-app.railway.app
+PORT=3000
+
+# Segurança
+BACKEND_SECRET=my-super-secret-key-for-production-2024
+
+# GitHub
+GITHUB_TOKEN=your-github-token-here
+
+# PostgreSQL - extraído da string de conexão
+POSTGRES_HOST=postgres.railway.internal
+POSTGRES_PORT=5432
+POSTGRES_USER=railway
+POSTGRES_PASSWORD=U__tP4eae9!rhciksAEzZr5ky8bUQWyj
+POSTGRES_DB=railway
+
+# Ou use as variáveis automáticas do Railway:
+# POSTGRES_HOST=${{Postgres.PGHOST}}
+# POSTGRES_PORT=${{Postgres.PGPORT}}
+# POSTGRES_USER=${{Postgres.PGUSER}}
+# POSTGRES_PASSWORD=${{Postgres.PGPASSWORD}}
+# POSTGRES_DB=${{Postgres.PGDATABASE}}

@@ -1,0 +1,21 @@
+[providers]
+node = "18"
+
+[phases.setup]
+nixPkgs = ["nodejs_18", "yarn", "python3", "make", "gcc", "libc", "libc.dev"]
+
+[phases.install]
+cmds = [
+  "yarn install --frozen-lockfile"
+]
+
+[phases.build]
+cmds = [
+  "yarn build:all"
+]
+
+[start]
+cmd = "yarn workspace backend start"
+
+[variables]
+NODE_ENV = "production"
