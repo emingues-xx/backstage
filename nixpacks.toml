@@ -1,7 +1,12 @@
+[phases.setup]
+nixPkgs = ["nodejs_20", "yarn"]
+
+[phases.install]
+cmds = ["yarn install --immutable"]
+
 [phases.build]
 cmds = ["yarn build:all"]
 
 [variables]
-NODE_VERSION = "18"
-YARN_VERSION = "1.22.19"
+NODE_VERSION = "20"
 NODE_ENV = "production"

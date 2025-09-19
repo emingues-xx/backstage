@@ -32,6 +32,10 @@ backend:
       database: ${POSTGRES_DB}
       ssl: 
         rejectUnauthorized: false
+    # Configurações adicionais para produção
+    pool:
+      min: 2
+      max: 10
 
 integrations:
   github:
