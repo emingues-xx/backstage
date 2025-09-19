@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ecommerce-docs
+  title: Ecommerce Veículos Documentation
+  description: Documentação completa da plataforma de e-commerce de veículos
+  annotations:
+    backstage.io/techdocs-ref: url:https://github.com/emingues-xx/catalog/tree/main/docs
+spec:
+  type: documentation
+  lifecycle: production
+  owner: development-team
