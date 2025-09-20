@@ -2,7 +2,7 @@
 nixPkgs = ["nodejs_20", "yarn"]
 
 [phases.install]
-cmds = ["yarn install --immutable"]
+cmds = ["yarn install --immutable", "yarn add -D ts-node"]
 
 [phases.build]
 cmds = ["yarn tsc"]
