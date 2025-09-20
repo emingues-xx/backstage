@@ -2,21 +2,20 @@
 FROM node:20.18.0-alpine
 
 # Instalar Yarn
-RUN npm install -g yarn@4.4.1
+RUN npm install -g yarn@1.22.22
 
 # Definir diretório de trabalho
 WORKDIR /app
 
 # Copiar arquivos de dependências
-COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn ./.yarn
+COPY package.json yarn.lock ./
 
 # Copiar configuração do workspace
 COPY packages/backend/package.json ./packages/backend/
 COPY packages/app/package.json ./packages/app/
 
 # Instalar dependências
-RUN yarn install --immutable
+RUN yarn install --frozen-lockfile
 
 # Copiar código fonte
 COPY . .
