@@ -12,7 +12,7 @@ COPY packages/backend/package.json ./packages/backend/
 COPY packages/app/package.json ./packages/app/
 
 # Instalar dependências
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
 # Copiar código fonte
 COPY . .
