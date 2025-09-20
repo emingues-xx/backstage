@@ -1,9 +1,10 @@
 # Variáveis de ambiente para Railway
 # Configure estas variáveis no painel do Railway
 
-# URLs da aplicação (substitua pelo domínio real do Railway)
-APP_BASE_URL=https://seu-app.railway.app
-BACKEND_BASE_URL=https://seu-app.railway.app
+# URLs da aplicação (IMPORTANTE: Configure com o domínio real do Railway)
+# Exemplo: https://backstage-production.up.railway.app
+APP_BASE_URL=https://backstage-production.up.railway.app
+BACKEND_BASE_URL=https://backstage-production.up.railway.app
 PORT=3000
 
 # Segurança - GERE UMA CHAVE SEGURA!

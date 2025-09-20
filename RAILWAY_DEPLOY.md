@@ -75,8 +75,18 @@ NODE_OPTIONS=--no-node-snapshot
 - **✅ TESTADO**: Solução funcionou no macOS - configuração validada para Railway
 - **CORRIGIDO**: Caminho do arquivo de config + Node.js v20.18.0
 - **MUDANÇA**: Migrado de Nixpacks para Dockerfile para controle total do Node.js v20
+- **CORRIGIDO**: Erro "Invalid URL" - variáveis de ambiente com URLs completas (https://)
 
-#### 4.2. Erro de conexão com banco:
+#### 4.2. Erro "Invalid URL":
+- **PROBLEMA**: `TypeError: Invalid URL` - URLs sem protocolo https://
+- **SOLUÇÃO**: Configurar variáveis de ambiente com URLs completas:
+  ```
+  APP_BASE_URL=https://seu-app.railway.app
+  BACKEND_BASE_URL=https://seu-app.railway.app
+  ```
+- **IMPORTANTE**: Substitua `seu-app.railway.app` pelo domínio real do Railway
+
+#### 4.3. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
 - Verificar se o serviço PostgreSQL está rodando
 
