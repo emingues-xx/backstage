@@ -11,3 +11,4 @@ cmds = ["yarn tsc", "yarn workspace app build"]
 NODE_VERSION = "20.18.0"
 NODE_ENV = "production"
 NIXPACKS_NODE_VERSION = "20.18.0"
+NIXPACKS_NODE_MAJOR_VERSION = "20"
