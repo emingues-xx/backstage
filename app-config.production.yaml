@@ -7,9 +7,12 @@ organization:
 
 backend:
   auth:
-    keys:
-      - secret: ${BACKEND_SECRET}
+    externalAccess:
+      - subject: external
+        allowed: ['*']
   baseUrl: ${BACKEND_BASE_URL}
+  cache:
+    store: memory
   listen:
     port: ${PORT}
   csp:

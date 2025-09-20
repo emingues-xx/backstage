@@ -76,6 +76,7 @@ NODE_OPTIONS=--no-node-snapshot
 - **CORRIGIDO**: Caminho do arquivo de config + Node.js v20.18.0
 - **MUDANÇA**: Migrado de Nixpacks para Dockerfile para controle total do Node.js v20
 - **CORRIGIDO**: Erro "Invalid URL" - variáveis de ambiente com URLs completas (https://)
+- **CORRIGIDO**: Configurações depreciadas - auth.externalAccess e cache.memory
 
 #### 4.2. Erro "Invalid URL":
 - **PROBLEMA**: `TypeError: Invalid URL` - URLs sem protocolo https://
