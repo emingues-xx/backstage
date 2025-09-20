@@ -1,5 +1,5 @@
-# Use Node.js 20 oficial (já vem com Yarn)
-FROM node:20.18.0-alpine
+# Use Node.js 20.18.1+ (já vem com Yarn)
+FROM node:20.18.1-alpine
 
 # Definir diretório de trabalho
 WORKDIR /app
