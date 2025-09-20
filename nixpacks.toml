@@ -8,5 +8,5 @@ cmds = ["yarn install --immutable"]
 cmds = ["yarn tsc", "yarn workspace app build"]
 
 [variables]
-NODE_VERSION = "20"
+NODE_VERSION = "20.18.0"
 NODE_ENV = "production"
