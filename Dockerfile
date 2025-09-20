@@ -1,8 +1,5 @@
-# Use Node.js 20 oficial
+# Use Node.js 20 oficial (já vem com Yarn)
 FROM node:20.18.0-alpine
-
-# Instalar Yarn
-RUN npm install -g yarn@1.22.22
 
 # Definir diretório de trabalho
 WORKDIR /app
