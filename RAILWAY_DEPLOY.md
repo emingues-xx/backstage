@@ -70,6 +70,9 @@ NODE_OPTIONS=--no-node-snapshot
 - **ABORDAGEM FINAL**: Removido build do backend completamente - usando ts-node para execução direta
 - **CORRIGIDO**: Erro ts-node persistente - voltado ao backstage-cli com contexto correto
 - **SOLUÇÃO FINAL**: Voltado ao build completo com yarn build:all e comando original
+- **SOLUÇÃO DEFINITIVA**: Removido build do backend - usando ts-node para execução direta
+- **SOLUÇÃO RAILWAY**: Build apenas do frontend + backstage-cli no contexto correto
+- **✅ TESTADO**: Solução funcionou no macOS - configuração validada para Railway
 
 #### 4.2. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
