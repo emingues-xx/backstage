@@ -1,0 +1,19 @@
+# Ignore files that are not needed for build
+node_modules
+.git
+.gitignore
+README.md
+*.log
+.DS_Store
+Thumbs.db
+
+# Keep all source files and configs
+!packages/
+!*.json
+!*.yaml
+!*.yml
+!*.toml
+!*.ts
+!*.js
+!*.tsx
+!*.jsx
