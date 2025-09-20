@@ -66,6 +66,7 @@ NODE_OPTIONS=--no-node-snapshot
 - **NOVA ABORDAGEM**: Removido build do backend - Backstage roda diretamente do TypeScript com ts-node
 - **CORRIGIDO**: Erro "Cannot find module" - adicionado ts-node e ajustado comando de start
 - **CORRIGIDO**: Erro ts-node "Cannot find module './index.ts'" - voltado ao build do backend e comando original
+- **CORRIGIDO**: Erro Rollup persistente - usando comando direto no diretório do backend
 
 #### 4.2. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
