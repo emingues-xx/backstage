@@ -74,6 +74,7 @@ NODE_OPTIONS=--no-node-snapshot
 - **SOLUÇÃO RAILWAY**: Build apenas do frontend + backstage-cli no contexto correto
 - **✅ TESTADO**: Solução funcionou no macOS - configuração validada para Railway
 - **CORRIGIDO**: Caminho do arquivo de config + Node.js v20.18.0
+- **MUDANÇA**: Migrado de Nixpacks para Dockerfile para controle total do Node.js v20
 
 #### 4.2. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
