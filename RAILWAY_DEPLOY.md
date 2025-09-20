@@ -65,6 +65,7 @@ NODE_OPTIONS=--no-node-snapshot
 - **CORRIGIDO**: Erro Rollup "Could not resolve entry module src/index.ts" - adicionado .nixpacksignore e ajustado build process
 - **NOVA ABORDAGEM**: Removido build do backend - Backstage roda diretamente do TypeScript com ts-node
 - **CORRIGIDO**: Erro "Cannot find module" - adicionado ts-node e ajustado comando de start
+- **CORRIGIDO**: Erro ts-node "Cannot find module './index.ts'" - voltado ao build do backend e comando original
 
 #### 4.2. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
