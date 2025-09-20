@@ -22,4 +22,5 @@ ENV NODE_ENV=production
 ENV NODE_OPTIONS=--no-node-snapshot
 
 # Comando de start
-CMD ["sh", "-c", "cd packages/backend && yarn start --config ../../app-config.production.yaml"]
+WORKDIR /app/packages/backend
+CMD ["yarn", "start", "--config", "../../app-config.production.yaml"]
