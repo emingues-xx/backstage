@@ -4,18 +4,11 @@ FROM node:20.18.1-alpine
 # Definir diretório de trabalho
 WORKDIR /app
 
-# Copiar arquivos de dependências
-COPY package.json yarn.lock ./
-
-# Copiar configuração do workspace
-COPY packages/backend/package.json ./packages/backend/
-COPY packages/app/package.json ./packages/app/
+# Copiar tudo primeiro
+COPY . .
 
 # Instalar dependências
-RUN yarn install
-
-# Copiar código fonte
-COPY . .
+RUN yarn install --network-timeout 1000000
 
 # Build do frontend
 RUN yarn tsc
