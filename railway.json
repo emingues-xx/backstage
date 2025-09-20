@@ -4,7 +4,7 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "cd packages/backend && yarn start --config ../../app-config.production.yaml",
+    "startCommand": "cd packages/backend; yarn start --config ../../app-config.production.yaml",
     "healthcheckPath": "/api/catalog/health",
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",

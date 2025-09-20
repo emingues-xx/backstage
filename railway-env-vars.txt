@@ -22,3 +22,4 @@ POSTGRES_DB=${{Postgres.PGDATABASE}}
 # Variáveis adicionais necessárias
 NODE_ENV=production
 NODE_OPTIONS=--no-node-snapshot
+NODE_VERSION=20.18.0
