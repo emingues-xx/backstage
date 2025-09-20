@@ -61,6 +61,7 @@ NODE_OPTIONS=--no-node-snapshot
 #### 4.1. Erro de build:
 - Verificar se todas as dependências estão no `package.json`
 - Verificar se o Node.js 20 está sendo usado
+- **CORRIGIDO**: Erro "Could not resolve entry module" - ajustado nixpacks.toml para build individual dos workspaces
 
 #### 4.2. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
