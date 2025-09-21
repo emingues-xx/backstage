@@ -27,14 +27,14 @@ import { Root } from './components/Root';
 
 import {
   AlertDisplay,
-  // OAuthRequestDialog,
-  // SignInPage,
+  OAuthRequestDialog,
+  SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
-// import { RequirePermission } from '@backstage/plugin-permission-react';
-// import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+import { RequirePermission } from '@backstage/plugin-permission-react';
+import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 // import { NotificationsPage } from '@backstage/plugin-notifications';
 // import { SignalsDisplay } from '@backstage/plugin-signals';
 
@@ -58,7 +58,7 @@ const app = createApp({
     });
   },
   components: {
-    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
 });
 
@@ -83,7 +83,14 @@ const routes = (
     </Route>
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
-    <Route path="/catalog-import" element={<CatalogImportPage />} />
+    <Route
+      path="/catalog-import"
+      element={
+        <RequirePermission permission={catalogEntityCreatePermission}>
+          <CatalogImportPage />
+        </RequirePermission>
+      }
+    />
     <Route path="/search" element={<SearchPage />}>
       {searchPage}
     </Route>
@@ -96,7 +103,7 @@ const routes = (
 export default app.createRoot(
   <>
     <AlertDisplay />
-    {/* <OAuthRequestDialog /> */}
+    <OAuthRequestDialog />
     {/* <SignalsDisplay /> */}
     <AppRouter>
       <Root>{routes}</Root>
