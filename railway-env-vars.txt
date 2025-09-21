@@ -14,11 +14,12 @@ BACKEND_SECRET=my-super-secret-key-for-production-2024-change-this
 GITHUB_TOKEN=your-github-token-here
 
 # PostgreSQL - Use as variáveis automáticas do Railway:
-POSTGRES_HOST=${{Postgres.PGHOST}}
-POSTGRES_PORT=${{Postgres.PGPORT}}
-POSTGRES_USER=${{Postgres.PGUSER}}
-POSTGRES_PASSWORD=${{Postgres.PGPASSWORD}}
-POSTGRES_DB=${{Postgres.PGDATABASE}}
+# IMPORTANTE: Host correto do Railway
+POSTGRES_HOST=metro.proxy.rlwy.net
+POSTGRES_PORT=38211
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=HMyJaLtRmOWbyDEkAZLPphTzTsKcMGVF
+POSTGRES_DB=railway
 
 # Variáveis adicionais necessárias
 NODE_ENV=production
