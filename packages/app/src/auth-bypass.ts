@@ -1,5 +1,5 @@
-import { createApiFactory, createApiRef } from '@backstage/core-plugin-api';
-import { IdentityApi, identityApiRef } from '@backstage/plugin-auth-react';
+import { createApiFactory } from '@backstage/core-plugin-api';
+import { IdentityApi, identityApiRef } from '@backstage/core-plugin-api';
 
 // API de identidade fake que sempre retorna um usuário guest
 const fakeIdentityApi: IdentityApi = {
