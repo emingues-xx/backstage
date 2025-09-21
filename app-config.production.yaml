@@ -59,6 +59,10 @@ integrations:
   github:
     - host: github.com
       token: ${GITHUB_TOKEN}
+    # Configuração para o repositório do catálogo
+    - host: github.com
+      token: ${GITHUB_TOKEN}
+      apiBaseUrl: https://api.github.com
 
 techdocs:
   builder: 'local'
@@ -76,17 +80,13 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Group, User, Domain]
   locations:
-    # Usar apenas arquivos locais de exemplo
-    - type: file
-      target: examples/entities.yaml
+    # Catálogo principal do repositório GitHub
+    - type: url
+      target: https://raw.githubusercontent.com/emingues-xx/catalog/main/catalog-info.yaml
       rules:
-        - allow: [Component, System, API, Resource, Location]
-    - type: file
-      target: examples/org.yaml
-      rules:
-        - allow: [Group, User, Domain]
+        - allow: [Component, System, API, Resource, Location, Group, User, Domain]
 
 permission:
   enabled: true
