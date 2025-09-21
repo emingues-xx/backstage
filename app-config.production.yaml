@@ -16,6 +16,11 @@ backend:
   #         - plugin: events
   baseUrl: ${BACKEND_BASE_URL}
   # Auth completamente desabilitado
+  # Configurar para permitir acesso anônimo
+  auth:
+    allowAnonymousAccess: true
+    # Desabilitar middleware de autenticação
+    disableAuthMiddleware: true
   cache:
     store: memory
   listen:
@@ -25,7 +30,7 @@ backend:
   cors:
     origin: ${APP_BASE_URL}
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
-    credentials: true
+    credentials: false
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   reading:
     allow:
