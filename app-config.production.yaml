@@ -21,6 +21,8 @@ backend:
     providers:
       guest:
         enabled: true
+        # Permitir guest provider em produção
+        dangerouslyAllowOutsideDevelopment: true
     session:
       secret: ${BACKEND_SECRET}
   cache:
