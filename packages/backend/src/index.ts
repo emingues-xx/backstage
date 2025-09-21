@@ -23,8 +23,8 @@ backend.add(
 // techdocs plugin
 backend.add(import('@backstage/plugin-techdocs-backend'));
 
-// auth plugin - disabled completely
-// backend.add(import('@backstage/plugin-auth-backend'));
+// auth plugin - enabled with guest provider
+backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
 
 // catalog plugin

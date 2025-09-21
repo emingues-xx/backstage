@@ -6,14 +6,13 @@ organization:
   name: Ecommerce Veiculos
 
 backend:
-  # auth:
-  #   externalAccess:
-  #     - type: static
-  #       options:
-  #         token: ${BACKEND_SECRET}
-  #         subject: external
-  #       accessRestrictions:
-  #         - plugin: events
+  auth:
+    providers:
+      guest:
+        enabled: true
+        dangerouslyAllowOutsideDevelopment: true
+    session:
+      secret: ${BACKEND_SECRET}
   baseUrl: ${BACKEND_BASE_URL}
   # Auth completamente desabilitado
   cache:
