@@ -8,7 +8,7 @@ organization:
 backend:
   auth:
     externalAccess:
-      - type: external
+      - type: static
         subject: external
         allowed: ['*']
   baseUrl: ${BACKEND_BASE_URL}
