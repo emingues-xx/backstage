@@ -27,8 +27,8 @@ import { Root } from './components/Root';
 
 import {
   AlertDisplay,
-  OAuthRequestDialog,
-  SignInPage,
+  // OAuthRequestDialog,
+  // SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
@@ -58,7 +58,7 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
   },
 });
 
@@ -103,7 +103,7 @@ const routes = (
 export default app.createRoot(
   <>
     <AlertDisplay />
-    <OAuthRequestDialog />
+    {/* <OAuthRequestDialog /> */}
     <SignalsDisplay />
     <AppRouter>
       <Root>{routes}</Root>

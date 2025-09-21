@@ -82,11 +82,11 @@ techdocs:
     apiBaseUrl: https://api.github.com
     token: ${GITHUB_TOKEN}
 
-auth:
-  providers:
-    guest: {}
-  session:
-    secret: ${BACKEND_SECRET}
+# auth:
+#   providers:
+#     guest: {}
+#   session:
+#     secret: ${BACKEND_SECRET}
 
 catalog:
   import:
@@ -101,5 +101,5 @@ catalog:
       rules:
         - allow: [Component, System, API, Resource, Location, Group, User, Domain]
 
-permission:
-  enabled: false
+# permission:
+#   enabled: false
