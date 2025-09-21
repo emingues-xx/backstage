@@ -76,7 +76,8 @@ NODE_OPTIONS=--no-node-snapshot
 - **CORRIGIDO**: Caminho do arquivo de config + Node.js v20.18.0
 - **MUDANÇA**: Migrado de Nixpacks para Dockerfile para controle total do Node.js v20
 - **CORRIGIDO**: Erro "Invalid URL" - variáveis de ambiente com URLs completas (https://)
-- **CORRIGIDO**: Configurações depreciadas - voltado para auth.keys (funcional) e cache.memory
+- **CORRIGIDO**: Configurações depreciadas - auth.externalAccess (moderna) e cache.memory
+- **CORRIGIDO**: Healthcheck removido - evitando erro 401 de autenticação
 
 #### 4.2. Erro "Invalid URL":
 - **PROBLEMA**: `TypeError: Invalid URL` - URLs sem protocolo https://
@@ -87,7 +88,12 @@ NODE_OPTIONS=--no-node-snapshot
   ```
 - **IMPORTANTE**: Substitua `seu-app.railway.app` pelo domínio real do Railway
 
-#### 4.3. Erro de conexão com banco:
+#### 4.3. Erro de Healthcheck:
+- **PROBLEMA**: `AuthenticationError: Missing credentials` no `/api/catalog/health`
+- **SOLUÇÃO**: Remover healthcheck do `railway.json` - Backstage não precisa
+- **CONFIGURAÇÃO**: Healthcheck removido para evitar problemas de autenticação
+
+#### 4.4. Erro de conexão com banco:
 - Verificar se as variáveis do PostgreSQL estão corretas
 - Verificar se o serviço PostgreSQL está rodando
 

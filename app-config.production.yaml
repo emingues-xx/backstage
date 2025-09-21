@@ -7,8 +7,10 @@ organization:
 
 backend:
   auth:
-    keys:
-      - secret: ${BACKEND_SECRET}
+    externalAccess:
+      - type: external
+        subject: external
+        allowed: ['*']
   baseUrl: ${BACKEND_BASE_URL}
   cache:
     store: memory
