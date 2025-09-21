@@ -1,7 +1,7 @@
 import {
   ScmIntegrationsApi,
   scmIntegrationsApiRef,
-  ScmAuth,
+  // ScmAuth,
 } from '@backstage/integration-react';
 import {
   AnyApiFactory,
