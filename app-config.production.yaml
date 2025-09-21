@@ -15,8 +15,18 @@ backend:
   #       accessRestrictions:
   #         - plugin: events
   baseUrl: ${BACKEND_BASE_URL}
-  # Auth completamente desabilitado
-  # Auth completamente desabilitado
+  # Configurar GitHub OAuth
+  auth:
+    providers:
+      github:
+        development:
+          clientId: ${GITHUB_CLIENT_ID}
+          clientSecret: ${GITHUB_CLIENT_SECRET}
+        production:
+          clientId: ${GITHUB_CLIENT_ID}
+          clientSecret: ${GITHUB_CLIENT_SECRET}
+    session:
+      secret: ${BACKEND_SECRET}
   cache:
     store: memory
   listen:

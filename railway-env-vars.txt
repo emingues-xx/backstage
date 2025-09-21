@@ -10,7 +10,9 @@ PORT=3000
 # Segurança - GERE UMA CHAVE SEGURA!
 BACKEND_SECRET=my-super-secret-key-for-production-2024-change-this
 
-# GitHub (opcional - para integração com GitHub)
+# GitHub OAuth (obrigatório para autenticação)
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
 GITHUB_TOKEN=your-github-token-here
 
 # PostgreSQL - Use as variáveis automáticas do Railway:

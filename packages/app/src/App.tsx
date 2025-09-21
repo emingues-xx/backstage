@@ -26,6 +26,7 @@ import { Root } from './components/Root';
 
 import {
   AlertDisplay,
+  SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
@@ -53,6 +54,7 @@ const app = createApp({
     });
   },
   components: {
+    SignInPage: props => <SignInPage {...props} auto providers={['github']} />,
   },
 });
 
