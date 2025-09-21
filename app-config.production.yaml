@@ -83,7 +83,10 @@ techdocs:
 
 auth:
   providers:
-    guest: {}
+    guest:
+      enabled: true
+  session:
+    secret: ${BACKEND_SECRET}
 
 catalog:
   import:
@@ -100,3 +103,5 @@ catalog:
 
 permission:
   enabled: true
+  policy:
+    default: allow
