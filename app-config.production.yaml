@@ -16,11 +16,13 @@ backend:
   #         - plugin: events
   baseUrl: ${BACKEND_BASE_URL}
   # Auth completamente desabilitado
-  # Configurar para permitir acesso anônimo
+  # Configurar auth com guest provider
   auth:
-    allowAnonymousAccess: true
-    # Desabilitar middleware de autenticação
-    disableAuthMiddleware: true
+    providers:
+      guest:
+        enabled: true
+    session:
+      secret: ${BACKEND_SECRET}
   cache:
     store: memory
   listen:
