@@ -8,16 +8,9 @@ organization:
 backend:
   auth:
     providers:
-      github:
-        development:
-          clientId: ${GITHUB_CLIENT_ID}
-          clientSecret: ${GITHUB_CLIENT_SECRET}
-        signIn:
-          resolvers:
-            - resolver: github
-              options:
-                userEntityRef: 'user:default/{{ user.login }}'
-        dangerouslyAllowSignInWithoutUserInCatalog: true
+      guest:
+        enabled: true
+        dangerouslyAllowOutsideDevelopment: true
     session:
       secret: ${BACKEND_SECRET}
   baseUrl: ${BACKEND_BASE_URL}
