@@ -17,14 +17,17 @@ backend:
   baseUrl: ${BACKEND_BASE_URL}
   # Configurar GitHub OAuth
   auth:
+    environment: production
     providers:
       github:
-        development:
-          clientId: ${GITHUB_CLIENT_ID}
-          clientSecret: ${GITHUB_CLIENT_SECRET}
         production:
           clientId: ${GITHUB_CLIENT_ID}
           clientSecret: ${GITHUB_CLIENT_SECRET}
+          signIn:
+            resolvers:
+              - resolver: usernameMatchingUserEntityName
+                options:
+                  dangerouslyAllowSignInWithoutUserInCatalog: true
     session:
       secret: ${BACKEND_SECRET}
   cache:
