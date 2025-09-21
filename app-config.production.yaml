@@ -15,6 +15,15 @@ backend:
   #       accessRestrictions:
   #         - plugin: events
   baseUrl: ${BACKEND_BASE_URL}
+  # Configurar auth para permitir acesso sem autenticação
+  auth:
+    providers:
+      guest:
+        enabled: true
+    session:
+      secret: ${BACKEND_SECRET}
+    # Permitir acesso sem autenticação para APIs públicas
+    allowAnonymousAccess: true
   cache:
     store: memory
   listen:
@@ -106,3 +115,9 @@ catalog:
 #   enabled: true
 #   policy:
 #     default: allow
+
+# Habilitar permissões com política allow-all
+permission:
+  enabled: true
+  policy:
+    default: allow
