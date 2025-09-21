@@ -98,6 +98,11 @@ NODE_OPTIONS=--no-node-snapshot
 - **SOLUÇÃO**: Adicionar `options.token` com `${BACKEND_SECRET}`
 - **CONFIGURAÇÃO**: `type: static` precisa de token obrigatório
 
+#### 4.3.2. Erro de subject de auth:
+- **PROBLEMA**: `Missing required config value at 'backend.auth.externalAccess[0].options.subject'`
+- **SOLUÇÃO**: Adicionar `options.subject` dentro de `options`
+- **CONFIGURAÇÃO**: `subject` deve estar dentro de `options`, não no nível raiz
+
 #### 4.4. Erro de Healthcheck:
 - **PROBLEMA**: `AuthenticationError: Missing credentials` no `/api/catalog/health`
 - **SOLUÇÃO**: Remover healthcheck do `railway.json` - Backstage não precisa
