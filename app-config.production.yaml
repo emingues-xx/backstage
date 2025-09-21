@@ -25,6 +25,7 @@ backend:
     origin: ${APP_BASE_URL}
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   reading:
     allow:
       - host: github.com
@@ -83,8 +84,7 @@ techdocs:
 
 auth:
   providers:
-    guest:
-      enabled: true
+    guest: {}
   session:
     secret: ${BACKEND_SECRET}
 
@@ -102,6 +102,4 @@ catalog:
         - allow: [Component, System, API, Resource, Location, Group, User, Domain]
 
 permission:
-  enabled: true
-  policy:
-    default: allow
+  enabled: false
