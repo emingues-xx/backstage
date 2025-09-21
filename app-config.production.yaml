@@ -15,21 +15,7 @@ backend:
   #       accessRestrictions:
   #         - plugin: events
   baseUrl: ${BACKEND_BASE_URL}
-  # Configurar GitHub OAuth
-  auth:
-    environment: production
-    providers:
-      github:
-        production:
-          clientId: ${GITHUB_CLIENT_ID}
-          clientSecret: ${GITHUB_CLIENT_SECRET}
-          signIn:
-            resolvers:
-              - resolver: usernameMatchingUserEntityName
-                options:
-                  dangerouslyAllowSignInWithoutUserInCatalog: true
-    session:
-      secret: ${BACKEND_SECRET}
+  # Auth completamente desabilitado
   cache:
     store: memory
   listen:

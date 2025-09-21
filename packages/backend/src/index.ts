@@ -23,11 +23,9 @@ backend.add(
 // techdocs plugin
 backend.add(import('@backstage/plugin-techdocs-backend'));
 
-// auth plugin - enabled for GitHub OAuth
-backend.add(import('@backstage/plugin-auth-backend'));
+// auth plugin - disabled completely
+// backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
-backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
-// See https://backstage.io/docs/auth/github/provider
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend'));
