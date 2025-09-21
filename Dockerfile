@@ -9,7 +9,7 @@ COPY . .
 
 # Limpar cache e instalar dependências
 RUN yarn cache clean
-RUN yarn install --network-timeout 1000000 --force
+RUN yarn install --network-timeout 1000000
 
 # Build do frontend
 RUN yarn tsc
