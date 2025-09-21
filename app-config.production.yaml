@@ -78,10 +78,15 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location]
   locations:
-    - type: url
-      target: https://raw.githubusercontent.com/emingues-xx/catalog/main/catalog-info.yaml
+    # Usar apenas arquivos locais de exemplo
+    - type: file
+      target: examples/entities.yaml
       rules:
-        - allow: [Component, System, API, Resource, Location, Group, User, Domain, Template]
+        - allow: [Component, System, API, Resource, Location]
+    - type: file
+      target: examples/org.yaml
+      rules:
+        - allow: [Group, User, Domain]
 
 permission:
   enabled: true
