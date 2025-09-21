@@ -26,7 +26,6 @@ import { Root } from './components/Root';
 
 import {
   AlertDisplay,
-  SignInPage,
 } from '@backstage/core-components';
 // import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { createApp } from '@backstage/app-defaults';
