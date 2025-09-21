@@ -7,8 +7,9 @@ WORKDIR /app
 # Copiar tudo primeiro
 COPY . .
 
-# Instalar dependências
-RUN yarn install --network-timeout 1000000
+# Limpar cache e instalar dependências
+RUN yarn cache clean
+RUN yarn install --network-timeout 1000000 --force
 
 # Build do frontend
 RUN yarn tsc
