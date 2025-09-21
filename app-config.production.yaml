@@ -16,15 +16,7 @@ backend:
   #         - plugin: events
   baseUrl: ${BACKEND_BASE_URL}
   # Auth completamente desabilitado
-  # Configurar auth com guest provider
-  auth:
-    providers:
-      guest:
-        enabled: true
-        # Permitir guest provider em produção
-        dangerouslyAllowOutsideDevelopment: true
-    session:
-      secret: ${BACKEND_SECRET}
+  # Auth completamente desabilitado
   cache:
     store: memory
   listen:
