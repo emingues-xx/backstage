@@ -70,6 +70,16 @@ techdocs:
     runIn: 'local'
   publisher:
     type: 'local'
+  # Configuração para integração com GitHub
+  requestUrl: ${BACKEND_BASE_URL}
+  storageUrl: ${BACKEND_BASE_URL}/api/techdocs/static/docs
+  # Configuração para repositórios GitHub
+  discovery:
+    policy: 'all'
+  # Configuração para GitHub como fonte
+  github:
+    apiBaseUrl: https://api.github.com
+    token: ${GITHUB_TOKEN}
 
 auth:
   providers:
