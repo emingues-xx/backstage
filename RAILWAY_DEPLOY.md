@@ -93,6 +93,11 @@ NODE_OPTIONS=--no-node-snapshot
 - **SOLUÇÃO**: Usar `type: static` ao invés de `type: external`
 - **TIPOS VÁLIDOS**: `static`, `legacy`, `jwks`
 
+#### 4.3.1. Erro de token de auth:
+- **PROBLEMA**: `Missing required config value at 'backend.auth.externalAccess[0].options.token'`
+- **SOLUÇÃO**: Adicionar `options.token` com `${BACKEND_SECRET}`
+- **CONFIGURAÇÃO**: `type: static` precisa de token obrigatório
+
 #### 4.4. Erro de Healthcheck:
 - **PROBLEMA**: `AuthenticationError: Missing credentials` no `/api/catalog/health`
 - **SOLUÇÃO**: Remover healthcheck do `railway.json` - Backstage não precisa
