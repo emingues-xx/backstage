@@ -7,19 +7,15 @@ organization:
 
 backend:
   auth:
+    environment: production
     providers:
       github:
-        development:
-          clientId: ${GITHUB_CLIENT_ID}
-          clientSecret: ${GITHUB_CLIENT_SECRET}
         production:
           clientId: ${GITHUB_CLIENT_ID}
           clientSecret: ${GITHUB_CLIENT_SECRET}
-        signIn:
-          resolvers:
-            - resolver: github
-              options:
-                userEntityRef: 'user:default/{{ user.login }}'
+          signIn:
+            resolvers:
+              - resolver: usernameMatchingUserEntityName
         dangerouslyAllowSignInWithoutUserInCatalog: true
     session:
       secret: ${BACKEND_SECRET}
@@ -114,11 +110,9 @@ catalog:
 
 # Configuração de auth para o frontend
 auth:
+  environment: production
   providers:
     github:
-      development:
-        clientId: ${GITHUB_CLIENT_ID}
-        clientSecret: ${GITHUB_CLIENT_SECRET}
       production:
         clientId: ${GITHUB_CLIENT_ID}
         clientSecret: ${GITHUB_CLIENT_SECRET}
