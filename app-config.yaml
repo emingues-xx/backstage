@@ -1,96 +1,111 @@
 app:
   title: Ecommerce Veiculos
-  baseUrl: http://localhost:3000
+  baseUrl: ${APP_BASE_URL}
 
 organization:
   name: Ecommerce Veiculos
 
 backend:
-  # Used for enabling authentication, secret is shared by all backend plugins
-  # See https://backstage.io/docs/auth/service-to-service-auth for
-  # information on the format
   auth:
-    keys:
-      - secret: my-secret-key-for-local-development
-  baseUrl: http://localhost:7007
+    environment: production
+    providers:
+      github:
+        production:
+          clientId: ${GITHUB_CLIENT_ID}
+          clientSecret: ${GITHUB_CLIENT_SECRET}
+          signIn:
+            resolvers:
+              - resolver: usernameMatchingUserEntityName
+        dangerouslyAllowSignInWithoutUserInCatalog: true
+    session:
+      secret: ${BACKEND_SECRET}
+  baseUrl: ${BACKEND_BASE_URL}
+  cache:
+    store: memory
   listen:
-    port: 7007
-    # Uncomment the following host directive to bind to specific interfaces
-    # host: 127.0.0.1
+    port: ${PORT}
   csp:
     connect-src: ["'self'", 'http:', 'https:']
-    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
-    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
-    origin: http://localhost:3000
+    origin: ${APP_BASE_URL}
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
-    credentials: true
+    credentials: false
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
   reading:
     allow:
       - host: github.com
       - host: raw.githubusercontent.com
-  # This is for local development only, it is not recommended to use this in production
-  # The production database configuration is stored in app-config.production.yaml
   database:
-    client: better-sqlite3
-    connection: ':memory:'
-  # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
+    client: pg
+    connection:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      database: ${POSTGRES_DB}
+      ssl: 
+        rejectUnauthorized: false
+        require: true
+    pool:
+      min: 1
+      max: 5
+      acquireTimeoutMillis: 30000
+      createTimeoutMillis: 30000
+      destroyTimeoutMillis: 5000
+      idleTimeoutMillis: 30000
+      reapIntervalMillis: 1000
+      createRetryIntervalMillis: 200
+    migrations:
+      directory: 'migrations'
+      tableName: 'migrations'
 
 integrations:
   github:
     - host: github.com
-      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/integrations/github/locations#configuration
       token: ${GITHUB_TOKEN}
-    ### Example for how to add your GitHub Enterprise instance using the API:
-    # - host: ghe.example.net
-    #   apiBaseUrl: https://ghe.example.net/api/v3
-    #   token: ${GHE_TOKEN}
+    - host: github.com
+      token: ${GITHUB_TOKEN}
+      apiBaseUrl: https://api.github.com
 
-proxy:
-  ### Example for how to add a proxy endpoint for the frontend.
-  ### A typical reason to do this is to handle HTTPS and CORS for internal services.
-  # endpoints:
-  #   '/test':
-  #     target: 'https://example.com'
-  #     changeOrigin: true
-
-# Reference documentation http://backstage.io/docs/features/techdocs/configuration
-# Note: After experimenting with basic setup, use CI/CD to generate docs
-# and an external cloud storage when deploying TechDocs for production use-case.
-# https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 techdocs:
-  builder: 'local' # Alternatives - 'external'
+  builder: 'local'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local'
   publisher:
-    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
-
-auth:
-  # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers:
-    # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
-
-scaffolder:
-  # see https://backstage.io/docs/features/software-templates/configuration for software template options
+    type: 'local'
+  requestUrl: ${BACKEND_BASE_URL}
+  storageUrl: ${BACKEND_BASE_URL}/api/techdocs/static/docs
+  discovery:
+    policy: 'all'
+  github:
+    apiBaseUrl: https://api.github.com
+    token: ${GITHUB_TOKEN}
 
 catalog:
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Group, User, Domain]
   locations:
     - type: url
       target: https://raw.githubusercontent.com/emingues-xx/catalog/main/catalog-info.yaml
       rules:
-        - allow: [Component, System, API, Resource, Location, Group, User, Domain, Template]
+        - allow: [Component, System, API, Resource, Location, Group, User, Domain]
+    - type: file
+      target: users.yaml
+      rules:
+        - allow: [User, Group]
 
-kubernetes:
-  # see https://backstage.io/docs/features/kubernetes/configuration for kubernetes configuration options
+auth:
+  environment: production
+  providers:
+    github:
+      production:
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
 
-# see https://backstage.io/docs/permissions/getting-started for more on the permission framework
 permission:
-  # setting this to `false` will disable permissions
   enabled: true
+  policy:
+    default: allow
