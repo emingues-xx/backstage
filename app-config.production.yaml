@@ -112,13 +112,19 @@ catalog:
       rules:
         - allow: [Component, System, API, Resource, Location, Group, User, Domain]
 
-# permission:
-#   enabled: true
-#   policy:
-#     default: allow
+# Configuração de auth para o frontend
+auth:
+  providers:
+    github:
+      development:
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
+      production:
+        clientId: ${GITHUB_CLIENT_ID}
+        clientSecret: ${GITHUB_CLIENT_SECRET}
 
-# Permissões desabilitadas
-# permission:
-#   enabled: true
-#   policy:
-#     default: allow
+# Configuração de permissões
+permission:
+  enabled: true
+  policy:
+    default: allow
