@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: emingues-xx
+spec:
+  profile:
+    displayName: Eduardo Mingues
+    email: emingues-xx@example.com
+  memberOf: [engineering]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: engineering
+spec:
+  type: team
+  children: []

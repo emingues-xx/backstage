@@ -107,6 +107,11 @@ catalog:
       target: https://raw.githubusercontent.com/emingues-xx/catalog/main/catalog-info.yaml
       rules:
         - allow: [Component, System, API, Resource, Location, Group, User, Domain]
+    # Usuário local para autenticação GitHub
+    - type: file
+      target: users.yaml
+      rules:
+        - allow: [User, Group]
 
 # Configuração de auth para o frontend
 auth:
