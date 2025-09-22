@@ -21,9 +21,9 @@ backend:
       secret: ${BACKEND_SECRET}
     externalAccess:
       - type: static
-        subject: external
         allowed: ['*']
         options:
+          subject: external
           token: ${BACKEND_SECRET}
   baseUrl: ${BACKEND_BASE_URL}
   cache:
