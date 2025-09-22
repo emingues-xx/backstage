@@ -4,7 +4,7 @@
     "builder": "DOCKERFILE"
   },
   "deploy": {
-    "startCommand": "NODE_ENV=production yarn start --config ../../app-config.yaml --config ../../app-config.production.yaml",
+    "startCommand": "yarn start --config ../../app-config.yaml --config ../../app-config.production.yaml",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
