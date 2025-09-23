@@ -9,6 +9,8 @@ backend:
   auth:
     environment: production
     providers:
+      guest:
+        enabled: true
       github:
         production:
           clientId: ${GITHUB_CLIENT_ID}
