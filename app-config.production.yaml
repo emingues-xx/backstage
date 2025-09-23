@@ -6,27 +6,27 @@ organization:
   name: Ecommerce Veiculos
 
 backend:
-  auth:
-    environment: production
-    providers:
-      guest:
-        enabled: true
-      github:
-        production:
-          clientId: ${GITHUB_CLIENT_ID}
-          clientSecret: ${GITHUB_CLIENT_SECRET}
-          signIn:
-            resolvers:
-              - resolver: usernameMatchingUserEntityName
-        dangerouslyAllowSignInWithoutUserInCatalog: true
-    session:
-      secret: ${BACKEND_SECRET}
-    externalAccess:
-      - type: static
-        allowed: ['*']
-        options:
-          subject: external
-          token: ${BACKEND_SECRET}
+  # auth:
+  #   environment: production
+  #   providers:
+  #     guest:
+  #       enabled: true
+  #     github:
+  #       production:
+  #         clientId: ${GITHUB_CLIENT_ID}
+  #         clientSecret: ${GITHUB_CLIENT_SECRET}
+  #         signIn:
+  #           resolvers:
+  #             - resolver: usernameMatchingUserEntityName
+  #       dangerouslyAllowSignInWithoutUserInCatalog: true
+  #   session:
+  #     secret: ${BACKEND_SECRET}
+  #   externalAccess:
+  #     - type: static
+  #       allowed: ['*']
+  #       options:
+  #         subject: external
+  #         token: ${BACKEND_SECRET}
   baseUrl: ${BACKEND_BASE_URL}
   # Auth completamente desabilitado
   cache:
