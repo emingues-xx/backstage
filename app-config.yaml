@@ -93,6 +93,8 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location, Group, User, Domain]
+  # Permitir acesso anônimo ao catalog
+  allowAnonymousAccess: true
   locations:
     - type: url
       target: https://raw.githubusercontent.com/emingues-xx/catalog/main/catalog-info.yaml
