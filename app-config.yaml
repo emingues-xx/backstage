@@ -9,7 +9,8 @@ backend:
   auth:
     environment: production
     providers:
-      guest: {}
+      guest:
+        dangerouslyAllowOutsideDevelopment: true
     session:
       secret: ${BACKEND_SECRET}
   baseUrl: ${BACKEND_BASE_URL}
