@@ -130,8 +130,8 @@ auth:
         clientId: ${GITHUB_CLIENT_ID}
         clientSecret: ${GITHUB_CLIENT_SECRET}
 
-# Configuração de permissões
-permission:
-  enabled: true
-  policy:
-    default: allow
+# Configuração de permissões - disabled since auth is disabled
+# permission:
+#   enabled: true
+#   policy:
+#     default: allow
