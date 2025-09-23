@@ -109,8 +109,9 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location, Group, User, Domain]
-  # Permitir acesso anônimo ao catalog
-  allowAnonymousAccess: true
+  # Configuração para bypassar autenticação
+  auth:
+    enabled: false
   locations:
     # Catálogo principal do repositório GitHub
     - type: url
