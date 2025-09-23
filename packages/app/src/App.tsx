@@ -28,6 +28,7 @@ import {
   AlertDisplay,
   SignInPage,
 } from '@backstage/core-components';
+import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
@@ -58,7 +59,14 @@ const app = createApp({
           <SignInPage
             {...props}
             auto
-            providers={['guest']}
+            providers={[
+              {
+                id: 'github',
+                title: 'GitHub',
+                message: 'Sign in using GitHub',
+                apiRef: githubAuthApiRef,
+              },
+            ]}
           />
         ),
       },
