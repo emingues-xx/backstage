@@ -13,6 +13,8 @@ backend:
         dangerouslyAllowOutsideDevelopment: true
     session:
       secret: ${BACKEND_SECRET}
+    # Desabilitar política de autenticação padrão (versão 1.24+)
+    dangerouslyDisableDefaultAuthPolicy: true
   #   externalAccess:
   #     - type: static
   #       allowed: ['*']
