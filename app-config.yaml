@@ -99,7 +99,7 @@ catalog:
       rules:
         - allow: [Component, System, API, Resource, Location, Group, User, Domain]
     - type: file
-      target: users.yaml
+      target: /app/users.yaml
       rules:
         - allow: [User, Group]
 

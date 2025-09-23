@@ -115,7 +115,7 @@ catalog:
         - allow: [Component, System, API, Resource, Location, Group, User, Domain]
     # Usuário local para autenticação GitHub
     - type: file
-      target: users.yaml
+      target: /app/users.yaml
       rules:
         - allow: [User, Group]
 
