@@ -6,21 +6,12 @@ organization:
   name: Ecommerce Veiculos
 
 backend:
-  # auth:
-  #   environment: production
-  #   providers:
-  #     guest:
-  #       enabled: true
-  #     github:
-  #       production:
-  #         clientId: ${GITHUB_CLIENT_ID}
-  #         clientSecret: ${GITHUB_CLIENT_SECRET}
-  #         signIn:
-  #           resolvers:
-  #             - resolver: usernameMatchingUserEntityName
-  #       dangerouslyAllowSignInWithoutUserInCatalog: true
-  #   session:
-  #     secret: ${BACKEND_SECRET}
+  auth:
+    environment: production
+    providers:
+      guest: {}
+    session:
+      secret: ${BACKEND_SECRET}
   #   externalAccess:
   #     - type: static
   #       allowed: ['*']
@@ -109,9 +100,6 @@ catalog:
     pullRequestBranchName: backstage-integration
   rules:
     - allow: [Component, System, API, Resource, Location, Group, User, Domain]
-  # Configuração para bypassar autenticação
-  auth:
-    enabled: false
   locations:
     # Catálogo principal do repositório GitHub
     - type: url
@@ -133,8 +121,9 @@ auth:
         clientId: ${GITHUB_CLIENT_ID}
         clientSecret: ${GITHUB_CLIENT_SECRET}
 
-# Configuração de permissões - disabled since auth is disabled
-# permission:
-#   enabled: true
-#   policy:
-#     default: allow
+# Configuração de permissões - allow all access
+permission:
+  enabled: true
+  policy:
+    allow:
+      - '*'
