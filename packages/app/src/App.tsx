@@ -59,7 +59,14 @@ const app = createApp({
           <SignInPage
             {...props}
             auto
-            provider={{ id: 'github', title: 'GitHub', message: 'Sign in using GitHub', apiRef: githubAuthApiRef }}
+            providers={[
+              {
+                id: 'github',
+                title: 'GitHub',
+                message: 'Sign in using GitHub',
+                apiRef: githubAuthApiRef,
+              },
+            ]}
           />
         ),
       },
