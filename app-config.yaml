@@ -111,7 +111,7 @@ auth:
         clientId: ${GITHUB_CLIENT_ID}
         clientSecret: ${GITHUB_CLIENT_SECRET}
 
-permission:
-  enabled: true
-  policy:
-    default: allow
+# permission:
+#   enabled: true
+#   policy:
+#     default: allow
